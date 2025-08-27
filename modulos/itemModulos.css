@@ -1,0 +1,42 @@
+.item {
+  height: 20rem;
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.img {
+  width: 40%;
+  height: 40%;
+  margin: 0 auto;
+}
+
+.h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.Descripcion {
+  font-size: 0.8rem;
+  color: #555;
+  text-align: center;
+  margin: 0.5rem 0;
+  line-height: 1.2rem;
+}
+
+.precio {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #2c7a7b;
+  text-align: center;
+}
+
+.verde { 
+    background-color: rgb(95, 133, 204);
+}
