@@ -1,3 +1,5 @@
+import { obtenerProductos } from "../../control/miLocalStorage.js";
+
 export function nav(){
  
     let nav = document.createElement('div');
@@ -19,9 +21,14 @@ export function nav(){
     nav.appendChild(div3);
 
     let div4 = document.createElement('div');
+    div4.href = "pages/carrito/carrito.html";
     div4.className = "div";
     div4.textContent = "🛒";
-    nav.appendChild(div4);
+     nav.appendChild(div4);
+
+    let divItem = document.createElement('div');
+    divItem.className = "div-Item"
+    divItem.textContent = obtenerProductos().lenght;
 
     
     return nav;

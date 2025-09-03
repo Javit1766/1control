@@ -5,6 +5,17 @@ import { seccion1 } from "./componentes/seccion1/seccion1Components.js"
 
     let seccion = document.createElement('section');
 
+
+    let listaDeCompras = localStorage.getItem("carritoLista");
+
+        if (!listaDeCompras) {
+            listaDeCompras = [];
+            localStorage.setItem("carrito", JSON.stringify(listaDeCompras));
+        } else {
+            listaDeCompras = JSON.parse(listaDeCompras);
+        } 
+        console.log(listaDeCompras);
+
     // header
     seccion.appendChild(header());
 

@@ -1,4 +1,5 @@
-import { listaDeCompras } from "../database/carrito.js";
+import { guardarProductos, obtenerProductos } from "../control/miLocalStorage.js";
+
 export function item(titulo, urlImg, Descripcion, Precio) {
 
     let item = document.createElement('div');
@@ -25,12 +26,14 @@ export function item(titulo, urlImg, Descripcion, Precio) {
     item.appendChild(precio);
 
     item.addEventListener('click', () => {
-        listaDeCompras.push(titulo);
-        localStorage.setItem("carrito",listaDeCompras);
-        
-        console.log(localStorage.getItem("carrito"));
-        console.log(listaDeCompras);
+        let carritoLocalStorage = obtenerProductos();
+        console.log("carrito: ", carritoLocalStorage)
+
+        carritoLocalStorage.push({precio:precio,nombre:titulo});
+        guardarProductos(carritoLocalStorage);
+        console.log("Producto en LocalStorage");
+        location.reload();
     });
-    
+
     return item;
 }
